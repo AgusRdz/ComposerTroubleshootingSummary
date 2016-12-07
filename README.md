@@ -15,17 +15,16 @@
  
 5. **Empty the internal cache.**
 
- `composer clear-cache`
- `composer install` o `composer update`
+ Run `composer clear-cache`, `composer install` or `composer update`
 
 ###Specific issues.
 
 - **Composer is very slow when updating / installing packages.**
- **Disable xDebug ** in your `php.ini` file while using Composer commenting on matching lines. 
+ **Disable xdebug ** in your `php.ini` file while using Composer commenting on matching lines. 
 
- > With xDebug enabled, the Composer installation and update process can take up to 20 times more!
+ > With xdebug enabled, the Composer installation and update process can take up to 20 times more!
  
- > **Note**: Check if you have xDebug enabled. (`Xdebug` will appear)
+ > **Note**: Check if you have xdebug enabled. (`xdebug` will appear)
  > Windows: `php -m | findstr xdebug`.
  > Unix: `php -m | grep xdebug`.
  
@@ -39,18 +38,19 @@
 
 - **Warning: Outdated lock file.**
 
- ```
+```
  Warning: The lock file is not up to date with the latest changes in composer.json, you may be getting outdated dependencies, 
  run update to update them.
 ```
- `composer update --lock`.
+`composer update --lock`.
 
-- **Warning: extensión openssl.**
+- **Warning: openssl extension.**
 
- `openssl extension is missing` o `must enable the openssl extension`
+ `openssl extension is missing` or `must enable the openssl extension`
+ 
  Enable the `php_openssl.dll` extension in your` php.ini` file.
  
-- **'Your requirements could not be resolved to an installable set of packages'.**
+- **Your requirements could not be resolved to an installable set of packages.**
 
  > **Note:** Check first that package names are spelled correctly.
 
@@ -58,8 +58,6 @@
  2. Add `"minimum-stability": "dev"`
  3. Stability and testing.
  4. Add `"prefer-stable": true`.
-
- Defines an [Alias] (Solve-conflicts-of-versions-and-requirements-in-Composer-(Aliases).
 
 - **Error 503 when downloading the .zip files from GitHub.**
 
